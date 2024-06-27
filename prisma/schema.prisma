@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id      Int    @id @default(autoincrement())
+  slug    String
+  title   String
+  content String
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt()
+  Partido   Partido[]
+  Pareja    Pareja[]
+}
+
+model Jugador {
+  id        Int       @id @default(autoincrement())
+  nombre    String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt()
+  Partido   Partido[]
+}
+
+model Partido {
+  id        Int      @id @default(autoincrement())
+  partido   String
+  fecha     DateTime
+  jugador   Jugador  @relation(fields: [jugadorId], references: [id])
+  equipo    String
+  puntos    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+  jugadorId Int
+  usuario   User     @relation(fields: [userId], references: [id])
+  userId    Int
+}
+
+model Pareja {
+  id        Int      @id @default(autoincrement())
+  fecha     DateTime
+  partido   String
+  pareja    String
+  puntos    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+  usuario   User     @relation(fields: [userId], references: [id])
+  userId    Int
+}
