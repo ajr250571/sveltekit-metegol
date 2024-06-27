@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { signOut } from '@auth/sveltekit/client';
+	// import { signOut } from '@auth/sveltekit/client';
 
 	export let connected: boolean;
 </script>

@@ -6,6 +6,6 @@ export default {
 	},
 	plugins: [require('daisyui')],
 	daisyui: {
-		themes: ['corporate', 'business', 'retro', 'cyberpunk','dracula']
+		themes: ['corporate', 'business', 'retro', 'cyberpunk', 'dracula']
 	}
 };
