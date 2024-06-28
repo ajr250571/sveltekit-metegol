@@ -53,6 +53,7 @@ export const GET = async () => {
 			eficiencia
 		});
 	}
+	result.sort((a, b) => b.eficiencia - a.eficiencia);
 	return Response.json(result, { status: 201 });
 };
 

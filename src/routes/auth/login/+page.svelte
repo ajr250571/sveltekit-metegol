@@ -19,7 +19,7 @@
 		const { email, password } = data;
 		if (!existeError(error)) {
 			await signIn('credentials', { email, password, redirect: false });
-			goto('/dashboard');
+			goto('/');
 
 			// toast.warning('Login incorrecto, reintente.');
 		}

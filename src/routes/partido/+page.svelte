@@ -69,9 +69,11 @@
 </script>
 
 <div class="flex flex-col justify-center items-center">
+	<p>Anota</p>
+	<p class="text-primary text-4xl font-extrabold tracking-widest">{data.session?.user.name}</p>
 	{#if partido.length > 0}
 		<form on:submit|once={handleSubmit}>
-			<div class="flex flex-col justify-center items-center mt-10">
+			<div class="flex flex-col justify-center items-center mt-6">
 				<div class="grid grid-cols-12 gap-x-8 gap-y-4">
 					<p class="col-span-6">Jugadores</p>
 					<p class="col-span-3">Jugó</p>
