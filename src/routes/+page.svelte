@@ -55,6 +55,8 @@
 				<p class="text-primary font-bold border-b-2 textarea-xs p-1 col-span-2">{item.eficiencia}</p>
 			{/each}
 		</div>
+	{:else}
+		<span class="loading loading-dots loading-lg"></span>
 	{/if}
 	<h1 class="text-accent font-bold mt-2 mb-1 text-2xl">Parejas</h1>
 	{#if rankingPareja.length > 0}
@@ -70,6 +72,8 @@
 				<p class="text-primary font-bold border-b-2 text-xs p-1 col-span-2">{item.eficiencia}</p>
 			{/each}
 		</div>
+	{:else}
+		<span class="loading loading-dots loading-lg"></span>
 	{/if}
 	<h1 class="text-accent font-bold mt-2 mb-1 text-2xl">Partidos</h1>
 	{#if data.parejas.length > 0}

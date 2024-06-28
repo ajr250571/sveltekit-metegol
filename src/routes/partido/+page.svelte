@@ -72,14 +72,12 @@
 	{#if partido.length > 0}
 		<form on:submit|once={handleSubmit}>
 			<div class="flex flex-col justify-center items-center mt-10">
-				<div class="grid grid-cols-12 gap-x-8 gap-y-2 mb-6">
+				<div class="grid grid-cols-12 gap-x-8 gap-y-4">
 					<p class="col-span-6">Jugadores</p>
 					<p class="col-span-3">Jugó</p>
 					<p class="col-span-3">Ganó</p>
-				</div>
-				<div class="grid grid-cols-12 gap-x-8 gap-y-2">
 					{#each partido as item, i}
-						<p class="text-primary text-3xl col-span-6">{item.nombre}</p>
+						<p class="text-secondary tracking-wider font-semibold text-4xl col-span-6">{item.nombre}</p>
 						<input type="checkbox" bind:checked={partido[i].jugo} class="checkbox checkbox-success mb-6 checkbox-lg col-span-3" />
 						{#if partido[i].jugo}
 							<input type="checkbox" bind:checked={partido[i].gano} class="checkbox checkbox-info mb-6 checkbox-lg col-span-3" />
